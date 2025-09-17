@@ -1,4 +1,4 @@
-module github.com/cloudflare/cfssl
+module github.com/liangboceo/cfssl
 
 go 1.21
 

@@ -5,14 +5,14 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/cloudflare/cfssl/api/generator"
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/cli/genkey"
-	"github.com/cloudflare/cfssl/cli/sign"
-	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/initca"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/signer"
+	"github.com/liangboceo/cfssl/api/generator"
+	"github.com/liangboceo/cfssl/cli"
+	"github.com/liangboceo/cfssl/cli/genkey"
+	"github.com/liangboceo/cfssl/cli/sign"
+	"github.com/liangboceo/cfssl/csr"
+	"github.com/liangboceo/cfssl/initca"
+	"github.com/liangboceo/cfssl/log"
+	"github.com/liangboceo/cfssl/signer"
 )
 
 var gencertUsageText = `cfssl gencert -- generate a new key and signed certificate

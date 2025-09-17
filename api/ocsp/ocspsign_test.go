@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cloudflare/cfssl/api"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/ocsp"
+	"github.com/liangboceo/cfssl/api"
+	"github.com/liangboceo/cfssl/helpers"
+	"github.com/liangboceo/cfssl/ocsp"
 
 	goocsp "golang.org/x/crypto/ocsp"
 )

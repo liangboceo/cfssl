@@ -6,10 +6,10 @@ import (
 	"net"
 	"os"
 
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/transport"
-	"github.com/cloudflare/cfssl/transport/core"
-	"github.com/cloudflare/cfssl/transport/example/exlib"
+	"github.com/liangboceo/cfssl/log"
+	"github.com/liangboceo/cfssl/transport"
+	"github.com/liangboceo/cfssl/transport/core"
+	"github.com/liangboceo/cfssl/transport/example/exlib"
 )
 
 // maclient is a mutual-authentication server, meant to demonstrate

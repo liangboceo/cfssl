@@ -12,14 +12,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/cloudflare/cfssl/api"
-	"github.com/cloudflare/cfssl/bundler"
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/signer/universal"
+	"github.com/liangboceo/cfssl/api"
+	"github.com/liangboceo/cfssl/bundler"
+	"github.com/liangboceo/cfssl/config"
+	"github.com/liangboceo/cfssl/csr"
+	"github.com/liangboceo/cfssl/errors"
+	"github.com/liangboceo/cfssl/log"
+	"github.com/liangboceo/cfssl/signer"
+	"github.com/liangboceo/cfssl/signer/universal"
 )
 
 const (
@@ -34,8 +34,8 @@ specifically, section 10.2.3 ("Information Requirements").`
 
 // Sum contains digests for a certificate or certificate request.
 type Sum struct {
-	MD5  string `json:"md5"`
-	SHA1 string `json:"sha-1"`
+	MD5    string `json:"md5"`
+	SHA1   string `json:"sha-1"`
 	SHA256 string `json:"sha-256"`
 }
 

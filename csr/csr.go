@@ -21,10 +21,10 @@ import (
 	"strconv"
 	"strings"
 
-	cferr "github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/helpers/derhelpers"
-	"github.com/cloudflare/cfssl/log"
+	cferr "github.com/liangboceo/cfssl/errors"
+	"github.com/liangboceo/cfssl/helpers"
+	"github.com/liangboceo/cfssl/helpers/derhelpers"
+	"github.com/liangboceo/cfssl/log"
 )
 
 const (

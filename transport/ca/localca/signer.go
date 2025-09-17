@@ -10,12 +10,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/initca"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/signer/local"
+	"github.com/liangboceo/cfssl/config"
+	"github.com/liangboceo/cfssl/csr"
+	"github.com/liangboceo/cfssl/helpers"
+	"github.com/liangboceo/cfssl/initca"
+	"github.com/liangboceo/cfssl/signer"
+	"github.com/liangboceo/cfssl/signer/local"
 )
 
 // CA is a local transport CertificateAuthority that is useful for

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/cli/certinfo"
-	"github.com/cloudflare/cfssl/config"
+	"github.com/liangboceo/cfssl/cli"
+	"github.com/liangboceo/cfssl/cli/certinfo"
+	"github.com/liangboceo/cfssl/config"
 
 	_ "github.com/go-sql-driver/mysql" // import to support MySQL
 	_ "github.com/lib/pq"              // import to support Postgres

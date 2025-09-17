@@ -13,8 +13,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
+	"github.com/liangboceo/cfssl/errors"
+	"github.com/liangboceo/cfssl/helpers"
 )
 
 // TestNew validate the CertificateRequest created to return with a KeyRequest

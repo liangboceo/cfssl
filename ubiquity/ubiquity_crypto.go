@@ -8,7 +8,7 @@ import (
 	"crypto/x509"
 	"math"
 
-	"github.com/cloudflare/cfssl/helpers"
+	"github.com/liangboceo/cfssl/helpers"
 )
 
 // HashUbiquity represents a score for how ubiquitous a given hash

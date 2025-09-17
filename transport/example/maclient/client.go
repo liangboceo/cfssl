@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/cloudflare/cfssl/transport"
-	"github.com/cloudflare/cfssl/transport/core"
-	"github.com/cloudflare/cfssl/transport/example/exlib"
+	"github.com/liangboceo/cfssl/transport"
+	"github.com/liangboceo/cfssl/transport/core"
+	"github.com/liangboceo/cfssl/transport/example/exlib"
 )
 
 // maclient is a mutual-authentication client, meant to demonstrate

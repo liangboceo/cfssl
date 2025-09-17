@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/certdb/testdb"
+	"github.com/liangboceo/cfssl/certdb"
+	"github.com/liangboceo/cfssl/certdb/sql"
+	"github.com/liangboceo/cfssl/certdb/testdb"
 )
 
 const (

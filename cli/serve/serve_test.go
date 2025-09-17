@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/cloudflare/cfssl/cli"
+	"github.com/liangboceo/cfssl/cli"
 )
 
 func TestServe(t *testing.T) {

@@ -6,9 +6,9 @@ import (
 	"errors"
 	"os"
 
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/transport/core"
-	"github.com/cloudflare/cfssl/transport/roots/system"
+	"github.com/liangboceo/cfssl/helpers"
+	"github.com/liangboceo/cfssl/transport/core"
+	"github.com/liangboceo/cfssl/transport/roots/system"
 )
 
 // Providers is a mapping of supported providers and the functions

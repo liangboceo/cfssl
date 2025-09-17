@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/initca"
+	"github.com/liangboceo/cfssl/csr"
+	"github.com/liangboceo/cfssl/helpers"
+	"github.com/liangboceo/cfssl/initca"
 )
 
 func TestEncodePEM(t *testing.T) {

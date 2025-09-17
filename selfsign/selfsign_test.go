@@ -2,8 +2,8 @@ package selfsign
 
 import (
 	"crypto/x509"
-	"encoding/pem"
 	"encoding/asn1"
+	"encoding/pem"
 	"net"
 	"net/url"
 	"os"
@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/helpers"
+	"github.com/liangboceo/cfssl/config"
+	"github.com/liangboceo/cfssl/helpers"
 )
 
 const (
@@ -49,7 +49,7 @@ func TestDefaultSign(t *testing.T) {
 }
 
 func TestSANs(t *testing.T) {
-	t.Skip("broken relating to https://github.com/cloudflare/cfssl/issues/1230")
+	t.Skip("broken relating to https://github.com/liangboceo/cfssl/issues/1230")
 	csrBytes, err := os.ReadFile(csr2File)
 	if err != nil {
 		t.Fatal(err)
@@ -105,7 +105,7 @@ func TestSANs(t *testing.T) {
 
 }
 
-func TestExtensions(t *testing.T){
+func TestExtensions(t *testing.T) {
 	csrBytes, err := os.ReadFile(extCsrFile)
 	if err != nil {
 		t.Fatal(err)
@@ -135,17 +135,17 @@ func TestExtensions(t *testing.T){
 
 	// Testing for 1.3.6.1.4.1.311.84.1.1=ASN1:UTF8String:example1
 	extFound := false
-	sampleCustomOid := asn1.ObjectIdentifier{1,3,6,1,4,1,311,84,1,1}
+	sampleCustomOid := asn1.ObjectIdentifier{1, 3, 6, 1, 4, 1, 311, 84, 1, 1}
 	sampleValue := "example1"
 
 	for _, e := range cert.Extensions {
-		if(e.Id.Equal(sampleCustomOid) ){
+		if e.Id.Equal(sampleCustomOid) {
 			var extValue string
 			_, err = asn1.Unmarshal(e.Value, &extValue)
 			if err != nil {
 				t.Fatal(err)
 			}
-			if(extValue == sampleValue){
+			if extValue == sampleValue {
 				extFound = true
 			}
 		}

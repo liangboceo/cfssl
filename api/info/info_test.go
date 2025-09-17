@@ -8,9 +8,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/cloudflare/cfssl/api"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/signer/local"
+	"github.com/liangboceo/cfssl/api"
+	"github.com/liangboceo/cfssl/signer"
+	"github.com/liangboceo/cfssl/signer/local"
 )
 
 const (
