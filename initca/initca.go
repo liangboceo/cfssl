@@ -44,6 +44,64 @@ func validator(req *csr.CertificateRequest) error {
 	return nil
 }
 
+func NewProfile(req *csr.CertificateRequest, policy *config.Signing) (cert, csrPEM, key []byte, err error) {
+	if policy == nil {
+		policy = CAPolicy()
+	}
+	if req.CA != nil {
+		if req.CA.Expiry != "" {
+			policy.Default.ExpiryString = req.CA.Expiry
+			policy.Default.Expiry, err = time.ParseDuration(req.CA.Expiry)
+			if err != nil {
+				return
+			}
+		}
+
+		if req.CA.Backdate != "" {
+			policy.Default.Backdate, err = time.ParseDuration(req.CA.Backdate)
+			if err != nil {
+				return
+			}
+		}
+
+		policy.Default.CAConstraint.MaxPathLen = req.CA.PathLength
+		if req.CA.PathLength != 0 && req.CA.PathLenZero {
+			log.Infof("ignore invalid 'pathlenzero' value")
+		} else {
+			policy.Default.CAConstraint.MaxPathLenZero = req.CA.PathLenZero
+		}
+	}
+
+	if req.CRL != "" {
+		policy.Default.CRL = req.CRL
+	}
+
+	g := &csr.Generator{Validator: validator}
+	csrPEM, key, err = g.ProcessRequest(req)
+	if err != nil {
+		log.Errorf("failed to process request: %v", err)
+		key = nil
+		return
+	}
+
+	priv, err := helpers.ParsePrivateKeyPEM(key)
+	if err != nil {
+		log.Errorf("failed to parse private key: %v", err)
+		return
+	}
+
+	s, err := local.NewSigner(priv, nil, signer.DefaultSigAlgo(priv), policy)
+	if err != nil {
+		log.Errorf("failed to create signer: %v", err)
+		return
+	}
+
+	signReq := signer.SignRequest{Hosts: req.Hosts, Request: string(csrPEM)}
+	cert, err = s.Sign(signReq)
+
+	return
+}
+
 // New creates a new root certificate from the certificate request.
 func New(req *csr.CertificateRequest) (cert, csrPEM, key []byte, err error) {
 	policy := CAPolicy()

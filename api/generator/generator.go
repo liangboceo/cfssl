@@ -175,13 +175,6 @@ func NewCertGeneratorHandler(validator Validator, caFile, caKeyFile string, poli
 	log.Info("setting up new generator / signer")
 	cg := new(CertGeneratorHandler)
 
-	if policy == nil {
-		policy = &config.Signing{
-			Default:  config.DefaultConfig(),
-			Profiles: nil,
-		}
-	}
-
 	root := universal.Root{
 		Config: map[string]string{
 			"ca-file":     caFile,
